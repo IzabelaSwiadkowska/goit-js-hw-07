@@ -31,12 +31,12 @@ gallery.addEventListener('click', (event) => {
   }
   const selectedImg = event.target.getAttribute('data-source');
   const instance = basicLightbox.create(
+    // eslint-disable-next-line comma-dangle
     `<img src ='${selectedImg}' width='800' height = '600'>`
   );
   instance.show();
-  // eslint-disable-next-line no-shadow
-  gallery.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+  gallery.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
       instance.close();
     }
   });

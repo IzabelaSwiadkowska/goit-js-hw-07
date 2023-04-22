@@ -5,6 +5,8 @@ console.log(galleryItems);
 const gallery = document.querySelector('.gallery');
 const items = [];
 galleryItems.forEach((element) => {
+  const newGallery = document.createElement('li');
+  newGallery.className = 'gallery__item';
   const galleryLink = document.createElement('a');
   galleryLink.className = 'gallery__link';
   galleryLink.href = element.original;
@@ -13,8 +15,9 @@ galleryItems.forEach((element) => {
   galleryImg.src = element.preview;
   galleryImg.setAttribute('title', element.description);
   galleryImg.alt = element.description;
+  newGallery.append(galleryLink);
   galleryLink.append(galleryImg);
-  items.push(galleryLink);
+  items.push(newGallery);
 });
 gallery.append(...items);
 
