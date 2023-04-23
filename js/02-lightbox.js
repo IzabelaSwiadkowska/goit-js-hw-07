@@ -13,7 +13,6 @@ galleryItems.forEach((element) => {
   const galleryImg = document.createElement('img');
   galleryImg.className = 'gallery__image';
   galleryImg.src = element.preview;
-  galleryImg.setAttribute('title', element.description);
   galleryImg.alt = element.description;
   newGallery.append(galleryLink);
   galleryLink.append(galleryImg);
@@ -24,4 +23,5 @@ gallery.append(...items);
 // eslint-disable-next-line no-new, no-undef
 new SimpleLightbox('.gallery a', {
   captionDelay: 250,
+  captionsData: 'alt',
 });
